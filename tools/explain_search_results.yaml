@@ -1,0 +1,135 @@
+identity:
+  name: explain_search_results
+  author: sakura4036
+  label:
+    en_US: Explain Search Results
+    zh_Hans: 搜索结果解释
+    pt_BR: Explicar Resultados da Pesquisa
+description:
+  human:
+    en_US: Get an explanation of search results from TXYZ Explain API
+    zh_Hans: 使用TXYZ解释API获取对搜索结果的解释
+    pt_BR: Obtenha uma explicação dos resultados da pesquisa da API de Explicação TXYZ
+  llm: Use this tool to get an explanation or summary of search results using TXYZ API. Provide a search ID to get insights about the results.
+parameters:
+  - name: search_id
+    type: string
+    required: true
+    label:
+      en_US: Search ID
+      zh_Hans: 搜索ID
+      pt_BR: ID de Pesquisa
+    human_description:
+      en_US: The ID of the search results that need explanation
+      zh_Hans: 需要解释的搜索结果ID
+      pt_BR: O ID dos resultados da pesquisa que precisam de explicação
+    llm_description: The ID of the search results that was returned from a previous search.
+    form: llm
+  - name: response_mode
+    type: select
+    required: false
+    label:
+      en_US: Response Mode
+      zh_Hans: 响应模式
+      pt_BR: Modo de Resposta
+    human_description:
+      en_US: The mode in which the explanation should be returned
+      zh_Hans: 返回解释的模式
+      pt_BR: O modo em que a explicação deve ser retornada
+    llm_description: The mode in which the explanation should be returned. Can be COMPLETE, INCREMENTAL, or NON_STREAMING.
+    form: form
+    options:
+      - value: COMPLETE
+        label:
+          en_US: Complete
+          zh_Hans: 完整
+          pt_BR: Completo
+      - value: INCREMENTAL
+        label:
+          en_US: Incremental
+          zh_Hans: 增量
+          pt_BR: Incremental
+      - value: NON_STREAMING
+        label:
+          en_US: Non-Streaming
+          zh_Hans: 非流式
+          pt_BR: Não-streaming
+    default: COMPLETE
+  - name: language
+    type: select
+    required: false
+    label:
+      en_US: Language
+      zh_Hans: 语言
+      pt_BR: Idioma
+    human_description:
+      en_US: The language in which the explanation should be provided
+      zh_Hans: 提供解释的语言
+      pt_BR: O idioma em que a explicação deve ser fornecida
+    llm_description: The language in which the explanation should be provided.
+    form: form
+    options:
+      - value: en
+        label:
+          en_US: English
+          zh_Hans: 英语
+          pt_BR: Inglês
+      - value: zh-Hans
+        label:
+          en_US: Simplified Chinese
+          zh_Hans: 简体中文
+          pt_BR: Chinês Simplificado
+      - value: zh-Hant
+        label:
+          en_US: Traditional Chinese
+          zh_Hans: 繁体中文
+          pt_BR: Chinês Tradicional
+      - value: es
+        label:
+          en_US: Spanish
+          zh_Hans: 西班牙语
+          pt_BR: Espanhol
+      - value: fr
+        label:
+          en_US: French
+          zh_Hans: 法语
+          pt_BR: Francês
+      - value: de
+        label:
+          en_US: German
+          zh_Hans: 德语
+          pt_BR: Alemão
+      - value: hi
+        label:
+          en_US: Hindi
+          zh_Hans: 印地语
+          pt_BR: Hindi
+      - value: ja
+        label:
+          en_US: Japanese
+          zh_Hans: 日语
+          pt_BR: Japonês
+      - value: ko
+        label:
+          en_US: Korean
+          zh_Hans: 韩语
+          pt_BR: Coreano
+      - value: ar
+        label:
+          en_US: Arabic
+          zh_Hans: 阿拉伯语
+          pt_BR: Árabe
+      - value: pt
+        label:
+          en_US: Portuguese
+          zh_Hans: 葡萄牙语
+          pt_BR: Português
+      - value: ru
+        label:
+          en_US: Russian
+          zh_Hans: 俄语
+          pt_BR: Russo
+    default: en
+extra:
+  python:
+    source: tools/explain_search_results.py 

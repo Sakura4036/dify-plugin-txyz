@@ -1,0 +1,46 @@
+identity:
+  name: scholar_search
+  author: sakura4036
+  label:
+    en_US: Scholar Search
+    zh_Hans: 学术搜索
+    pt_BR: Busca Acadêmica
+description:
+  human:
+    en_US: Search for academic papers with TXYZ Scholar Search API
+    zh_Hans: 使用TXYZ学术搜索API搜索学术论文
+    pt_BR: Pesquise artigos acadêmicos com a API de Busca Acadêmica TXYZ
+  llm: Use this tool to search for academic papers and scholarly articles using TXYZ API. The API searches across academic databases and returns relevant scholarly results.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Consulta
+    human_description:
+      en_US: The search query to find academic papers
+      zh_Hans: 用于查找学术论文的搜索查询
+      pt_BR: A consulta de pesquisa para encontrar artigos acadêmicos
+    llm_description: The search query to find academic papers and scholarly articles.
+    form: llm
+  - name: max_num_results
+    type: number
+    required: false
+    label:
+      en_US: Maximum number of results
+      zh_Hans: 最大结果数量
+      pt_BR: Número máximo de resultados
+    human_description:
+      en_US: The maximum number of search results to return (default is 10)
+      zh_Hans: 要返回的最大搜索结果数量（默认为10个）
+      pt_BR: O número máximo de resultados de pesquisa a retornar (o padrão é 10)
+    llm_description: The maximum number of search results to return. Default is 10 if not specified.
+    form: form
+    default: 10
+    min: 1
+    max: 20
+extra:
+  python:
+    source: tools/scholar_search.py 

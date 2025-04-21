@@ -1,0 +1,46 @@
+identity:
+  name: web_search
+  author: sakura4036
+  label:
+    en_US: Web Search
+    zh_Hans: 网页搜索
+    pt_BR: Busca na Web
+description:
+  human:
+    en_US: Search the web for general purpose information with TXYZ Web Search API
+    zh_Hans: 使用TXYZ网页搜索API查找一般性信息
+    pt_BR: Pesquise na web por informações de propósito geral com a API de Busca na Web TXYZ
+  llm: Use this tool to search the web for general purpose information. The results will be resources from web pages.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Consulta
+    human_description:
+      en_US: The search query to find information on the web
+      zh_Hans: 用于在网络上查找信息的搜索查询
+      pt_BR: A consulta de pesquisa para encontrar informações na web
+    llm_description: The search query that you want to find information about on the web.
+    form: llm
+  - name: max_num_results
+    type: number
+    required: false
+    label:
+      en_US: Maximum number of results
+      zh_Hans: 最大结果数量
+      pt_BR: Número máximo de resultados
+    human_description:
+      en_US: The maximum number of search results to return (default is 10)
+      zh_Hans: 要返回的最大搜索结果数量（默认为10个）
+      pt_BR: O número máximo de resultados de pesquisa a retornar (o padrão é 10)
+    llm_description: The maximum number of search results to return. Default is 10 if not specified.
+    form: form
+    default: 10
+    min: 1
+    max: 20
+extra:
+  python:
+    source: tools/web_search.py 

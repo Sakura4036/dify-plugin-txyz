@@ -2,16 +2,33 @@ identity:
   author: sakura4036
   name: txyz
   label:
-    en_US: txyz
-    zh_Hans: txyz
-    pt_BR: txyz
+    en_US: TXYZ
+    zh_Hans: TXYZ
+    pt_BR: TXYZ
   description:
     en_US: Tools for TXYZ APIs
-    zh_Hans: Tools for TXYZ APIs
-    pt_BR: Tools for TXYZ APIs
+    zh_Hans: TXYZ API工具集
+    pt_BR: Ferramentas para APIs TXYZ
   icon: icon.svg
+  tags:
+    - search
+credentials_for_provider:
+  api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: API Key
+      zh_Hans: API密钥
+      pt_BR: Chave de API
+    placeholder:
+      en_US: Your TXYZ API Key
+      zh_Hans: 您的TXYZ API密钥
+      pt_BR: Sua chave de API TXYZ
 tools:
-  - tools/txyz.yaml
+  - tools/smart_search.yaml
+  - tools/scholar_search.yaml
+  - tools/explain_search_results.yaml
+  - tools/web_search.yaml
 extra:
   python:
     source: provider/txyz.py

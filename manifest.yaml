@@ -1,0 +1,50 @@
+version: 0.0.1
+type: plugin
+author: sakura4036
+name: txyz
+label:
+  en_US: txyz
+  ja_JP: txyz
+  zh_Hans: txyz
+  pt_BR: txyz
+description:
+  en_US: Tools for TXYZ APIs
+  ja_JP: Tools for TXYZ APIs
+  zh_Hans: Tools for TXYZ APIs
+  pt_BR: Tools for TXYZ APIs
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: true
+      llm: true
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 10485760
+plugins:
+  tools:
+    - provider/txyz.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-04-21T17:03:22.6374055+08:00
+privacy: PRIVACY.md
+verified: false

@@ -1,0 +1,17 @@
+identity:
+  author: sakura4036
+  name: txyz
+  label:
+    en_US: txyz
+    zh_Hans: txyz
+    pt_BR: txyz
+  description:
+    en_US: Tools for TXYZ APIs
+    zh_Hans: Tools for TXYZ APIs
+    pt_BR: Tools for TXYZ APIs
+  icon: icon.svg
+tools:
+  - tools/txyz.yaml
+extra:
+  python:
+    source: provider/txyz.py

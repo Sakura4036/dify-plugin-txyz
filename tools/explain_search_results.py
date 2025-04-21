@@ -15,7 +15,7 @@ class ExplainSearchResultsTool(Tool):
         api_key = self.runtime.credentials.get("api_key")
         
         # Set API endpoint
-        api_url = "https://api.txyz.ai/api/v1/search/explain"
+        api_url = "https://api.txyz.ai/v1/search/explain"
         
         # Prepare headers
         headers = {

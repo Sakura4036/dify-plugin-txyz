@@ -15,7 +15,7 @@ class SmartSearchTool(Tool):
         api_key = self.runtime.credentials.get("api_key")
         
         # Set API endpoint
-        api_url = "https://api.txyz.ai/api/v1/search/smart"
+        api_url = "https://api.txyz.ai/v1/search/smart"
         
         # Prepare headers
         headers = {

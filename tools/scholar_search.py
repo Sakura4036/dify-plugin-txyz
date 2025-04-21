@@ -15,7 +15,7 @@ class ScholarSearchTool(Tool):
         api_key = self.runtime.credentials.get("api_key")
         
         # Set API endpoint
-        api_url = "https://api.txyz.ai/api/v1/search/scholar"
+        api_url = "https://api.txyz.ai/v1/search/scholar"
         
         # Prepare headers
         headers = {

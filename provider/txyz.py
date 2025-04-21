@@ -1,7 +1,5 @@
 from typing import Any
-
 import requests
-
 from dify_plugin import ToolProvider
 from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 
@@ -29,6 +27,7 @@ class TxyzProvider(ToolProvider):
                 headers=headers,
                 timeout=10
             )
+            print(response.status_code, response.text)  # Debugging line to check the response status and text
             
             # 检查响应状态
             if response.status_code == 401:

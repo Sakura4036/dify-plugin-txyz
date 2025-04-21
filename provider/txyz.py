@@ -23,7 +23,7 @@ class TxyzProvider(ToolProvider):
             # 使用TXYZ API验证密钥
             response = requests.post(
                 url="https://api.txyz.ai/v1/search/web",
-                json={"query": "test", "max_num_results": 1},
+                params={"query": "test", "max_num_results": 1},
                 headers=headers,
                 timeout=10
             )

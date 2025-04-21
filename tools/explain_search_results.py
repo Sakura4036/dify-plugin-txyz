@@ -39,7 +39,7 @@ class ExplainSearchResultsTool(Tool):
             # Make the API request
             response = requests.post(
                 url=api_url,
-                json=payload,
+                params=payload,
                 headers=headers,
                 timeout=60  # Longer timeout as explanation might take more time
             )

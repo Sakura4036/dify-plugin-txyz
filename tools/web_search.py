@@ -25,22 +25,25 @@ class WebSearchTool(Tool):
             "Content-Type": "application/json"
         }
 
-        # Prepare payload from parameters
-        payload = {
+        # Prepare params from parameters
+        params = {
             "query": tool_parameters.get("query"),
             "max_num_results": tool_parameters.get("max_num_results", 10)
         }
+        
+        # Get timeout parameter
+        timeout = tool_parameters.get("timeout", 120)
 
         # Remove None values
-        payload = {k: v for k, v in payload.items() if v is not None}
+        params = {k: v for k, v in params.items() if v is not None}
 
         try:
             # Make the API request
             response = requests.post(
                 url=api_url,
-                params=payload,
+                json=params,
                 headers=headers,
-                timeout=30
+                timeout=timeout
             )
             response.raise_for_status()
 

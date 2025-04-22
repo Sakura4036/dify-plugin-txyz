@@ -25,23 +25,26 @@ class ExplainSearchResultsTool(Tool):
             "Content-Type": "application/json"
         }
 
-        # Prepare payload from parameters
-        payload = {
+        # Prepare params from parameters
+        params = {
             "search_id": tool_parameters.get("search_id", ""),
             "response_mode": tool_parameters.get("response_mode", "COMPLETE"),
             "language": tool_parameters.get("language", "en")
         }
 
+        # Get timeout parameter
+        timeout = tool_parameters.get("timeout", 120)
+
         # Remove None values
-        payload = {k: v for k, v in payload.items() if v is not None}
+        params = {k: v for k, v in params.items() if v is not None}
 
         try:
             # Make the API request
             response = requests.post(
                 url=api_url,
-                params=payload,
+                params=params,
                 headers=headers,
-                timeout=60  # Longer timeout as explanation might take more time
+                timeout=timeout  # Use the configured timeout
             )
             response.raise_for_status()
 

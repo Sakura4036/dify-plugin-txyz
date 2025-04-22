@@ -130,6 +130,22 @@ parameters:
           zh_Hans: 俄语
           pt_BR: Russo
     default: en
+  - name: timeout
+    type: number
+    required: false
+    label:
+      en_US: Timeout
+      zh_Hans: 超时时间
+      pt_BR: Tempo limite
+    human_description:
+      en_US: Request timeout in seconds (default is 120)
+      zh_Hans: 请求超时时间（秒），默认为120秒
+      pt_BR: Tempo limite da requisição em segundos (o padrão é 120)
+    llm_description: The timeout value in seconds for the API request. Default is 120 seconds if not specified.
+    form: form
+    default: 120
+    min: 1
+    max: 600
 extra:
   python:
     source: tools/explain_search_results.py 
